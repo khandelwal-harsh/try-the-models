@@ -36,3 +36,91 @@
     transform: rotate(360deg);
   }
 }
+
+.listModels{
+  background-color: black;
+  margin: auto;
+}
+
+.header{
+  text-align: center;
+  background-color: black;
+  height: 100vh;
+  /* border: 10px solid grey; */
+}
+
+.cards{
+  /* border: 10px solid green; */
+  padding: auto;
+  display: grid;
+  grid-template-columns: 485px 485px 485px;
+  grid-template-rows: 500px 500px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.modelnames{
+  height: 100px;
+}
+
+.image-card{
+  /* border: 10px solid red; */
+  height: 20px;
+  text-align: center;
+}
+
+.item{
+  /* border: 10px solid blue; */
+  height: 400px;
+}
+
+.images{
+  display: grid;
+  margin-left:150px;
+  margin-right: 100px;
+  grid-template-columns: 700px 700px;
+  grid-auto-columns: auto;
+  grid-template-rows: 500px 500px;
+  border: 10px solid blue;
+}
+
+.container{
+  margin-top: 100px;
+}
+
+.upload{
+  margin-top: 50px;
+  align-items: center;
+  align-content: stretch;
+}
+
+.welcomeBlackScreen{
+  background-color: black;
+  height: auto;
+  width: auto;
+  /* border: 10px solid red; */
+}
+
+.welcomeWhiteScreen{
+  background-color: white;
+  height: auto;
+  width: auto;
+  /* border: 10px solid blue; */
+  margin-left: 45%;
+  margin-right: 50%;
+  padding-top: 10em;
+}
+
+.text{
+  display: flex;
+  height: 50vh;
+  flex-direction: column;
+  /* border: 10px solid green; */
+  margin: auto;
+}
+
+.welcome-text{
+  color: white;
+  margin: auto;
+  font-size: 70px;
+}
