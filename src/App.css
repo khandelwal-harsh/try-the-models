@@ -39,14 +39,15 @@
 
 .listModels{
   background-color: black;
-  margin: auto;
+  /* margin: auto; */
+  border: 1px solid black;
 }
 
 .header{
   text-align: center;
-  background-color: black;
+  background-color: #2596be;
   height: 100vh;
-  /* border: 10px solid grey; */
+  border: 10px solid #2596be;
 }
 
 .cards{

@@ -5,7 +5,7 @@ import ActionAreaCard from "./ActionAreaCard"
 const ListModels = () =>{
     return (
         <div className="listModels">
-            <h2 className="header ">Models</h2>
+            <h1 style={{color:"white",marginTop:"30px",textAlign:"center"}}>Models Brochure</h1>
             <div className="cards">
                 <ActionAreaCard data={"Fire Detection"}></ActionAreaCard>
                 <ActionAreaCard data={"Mask Detection"}></ActionAreaCard>

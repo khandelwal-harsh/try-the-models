@@ -3,6 +3,8 @@ import Button from '@material-ui/core/Button';
 import React from "react";
 import {useState,useEffect} from "react";
 import {useLocation, useNavigate} from "react-router-dom"
+import UploadButtons from "../screens/UploadButton"
+import LinearWithValueLabel from "../screens/ProgressBar";
 
 
 const Models = () =>{
@@ -56,16 +58,14 @@ const Models = () =>{
     }
 
     return (
-        <div className="header" style={{border:"10px solid red"}}>
-            <h1 style={{"text-align":"center",border:"10px solid green",color:"white"}}>Test {apiType}</h1>
+        <div className="header">
+            <h1 style={{"text-align":"center"}}>Test {apiType}</h1>
             <div className="container">
             <input
                 accept="image/*"
                 type="file"
                 onChange={updateImage}
-                style={{border:"10px solid blue"}}
                 />
-
                 {image && (
                 <div style={styles.preview}>
                     <img
@@ -76,6 +76,7 @@ const Models = () =>{
                     <Button className="btn waves-effect waves-light test" onClick={uploadImage} style={styles.delete}>
                     Upload file
                     </Button>
+                    <LinearWithValueLabel value={uploadImage} />
                 </div>
                 )}
             </div>
@@ -97,14 +98,15 @@ const styles = {
       marginTop: 50,
       display: "flex",
       flexDirection: "column",
+    //   border: "10px solid red",
     },
-    image: { maxWidth: 1000, maxHeight: 500 ,marginLeft:300},
+    image: { maxWidth: 800, maxHeight: 400 ,marginLeft:300},
     delete: {
       cursor: "pointer",
-      padding: 15,
       text:"white",
       marginTop:10,
       maxWidth:200,
-      marginLeft:700
+      marginLeft:600,
+      backgroundColor: "white"
     },
   };

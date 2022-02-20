@@ -24,7 +24,7 @@ export default function ActionAreaCard(props) {
     apiType = "Mask Detection Api"
   }
   return (
-    <Card  sx={{ width: 400,height: 400}} onClick={()=>{navigate("/models",{state:{apiType:apiType}})}}>
+    <Card  sx={{ width: 400,height: 400 }} onClick={()=>{navigate("/models",{state:{apiType:apiType}})}}>
       <CardActionArea>
         <CardMedia
           component="img"
