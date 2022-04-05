@@ -21,7 +21,7 @@ const Models = () =>{
 
     useEffect(()=>{
         if (url){
-        fetch("http://0.0.0.0:5000/send_image_input",{
+        fetch("http://52.3.195.102:5000/send_image_input",{
             method:"Post",
             headers: {
                 'Content-Type': 'application/json',
