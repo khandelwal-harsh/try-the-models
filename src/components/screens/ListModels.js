@@ -9,9 +9,9 @@ const ListModels = () =>{
             <div className="cards">
                 <ActionAreaCard data={"Fire Detection"}></ActionAreaCard>
                 <ActionAreaCard data={"Mask Detection"}></ActionAreaCard>
-                <ActionAreaCard data={"Mask Detection"}></ActionAreaCard>
-                <ActionAreaCard data={"Mask Detection"}></ActionAreaCard>
-                <ActionAreaCard data={"Mask Detection"}></ActionAreaCard>
+                <ActionAreaCard data={"Face Detection"}></ActionAreaCard>
+                <ActionAreaCard data={"Facial Recognition"}></ActionAreaCard>
+                <ActionAreaCard data={"Facial Expression Recognition"}></ActionAreaCard>
             </div>
         </div>
     )
