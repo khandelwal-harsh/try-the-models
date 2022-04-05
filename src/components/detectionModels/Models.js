@@ -3,8 +3,8 @@ import Button from '@material-ui/core/Button';
 import React from "react";
 import {useState,useEffect} from "react";
 import {useLocation, useNavigate} from "react-router-dom"
-import UploadButtons from "../screens/UploadButton"
-import LinearWithValueLabel from "../screens/ProgressBar";
+// import UploadButtons from "../screens/UploadButton"
+// import LinearWithValueLabel from "../screens/ProgressBar";
 
 
 const Models = () =>{
@@ -16,6 +16,8 @@ const Models = () =>{
         setImage(event.target.files[0])
     }
     const navigate = useNavigate()
+    const axios = require('axios')
+    const [progress,setProgress] = useState(0)
 
     useEffect(()=>{
         if (url){
@@ -42,18 +44,23 @@ const Models = () =>{
         data.append("file",image)
         data.append("upload_preset","insta-clone")
         data.append("cloud_name","instaimages") 
-       
-        fetch("https://api.cloudinary.com/v1_1/instaimages/image/upload",{
+
+        axios({
+            url:"https://api.cloudinary.com/v1_1/instaimages/image/upload",
             method:"post",
-            body:data
-        }).then(res=>res.json())
-        .then(data=>{
-            setUrl(data.url)
-            console.log(data.url)
+            data:data,
+            unUploadProgress: (data) =>{
+                setProgress(Math.round(100*data.loaded/data.total))
+                console.log("progress",progress)
+            }
+        }).then(res=>{
+            setUrl(res.data.url)
+            console.log(res.data.url)
+            setProgress(1)
         })
+
         .catch(err=>{
             console.log(err)
-
         })
     }
 
@@ -61,6 +68,9 @@ const Models = () =>{
         <div className="header">
             <h1 style={{"text-align":"center"}}>Test {apiType}</h1>
             <div className="container">
+                <div>
+                    Upload Progress: {progress && progress *100 + "%"}
+                </div>
             <input
                 accept="image/*"
                 type="file"
@@ -76,7 +86,7 @@ const Models = () =>{
                     <Button className="btn waves-effect waves-light test" onClick={uploadImage} style={styles.delete}>
                     Upload file
                     </Button>
-                    <LinearWithValueLabel value={uploadImage} />
+                    {/* <LinearWithValueLabel value={progress*100} /> */}
                 </div>
                 )}
             </div>
